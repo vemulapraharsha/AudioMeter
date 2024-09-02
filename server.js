@@ -29,6 +29,9 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 //Routes
+app.get("/", (req, res) => {
+    res.redirect("/home");
+});
 app.use('/home', homeRoute);
 app.use('/input', inputRoute);
 app.use('/test', testRoute);
